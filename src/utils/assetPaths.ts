@@ -8,7 +8,9 @@ export function getAssetPath(path: string): string {
   if (path.startsWith('http') || path.startsWith('//')) {
     return path;
   }
-  
-  // Remove the '/arcane-horizons' prefix if present
-  return path.replace(/^\/arcane-horizons\//, '/');
+
+  // Strip legacy prefix and any leading slash, then resolve against the app base
+  const clean = path.replace(/^\/arcane-horizons\//, '/').replace(/^\/+/, '');
+  const base = import.meta.env.BASE_URL || '/';
+  return `${base.endsWith('/') ? base : base + '/'}${clean}`;
 }

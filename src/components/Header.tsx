@@ -94,8 +94,8 @@ const Header = () => {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-8">
         <a href="/" onClick={handleLogoClick} className="flex items-center space-x-2 no-underline">
-          <span className="text-xl font-display font-bold tracking-tight">ARCA</span>
-          <span className="text-xl font-display font-normal tracking-tight">LABORATORY</span>
+          <span className="text-xl font-display font-bold tracking-tight">OPTICAL</span>
+          <span className="text-xl font-display font-normal tracking-tight">MESH</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -128,8 +128,8 @@ const Header = () => {
         <div className="fixed inset-0 top-0 z-40 bg-background md:hidden">
           <div className="fixed top-0 left-0 right-0 flex justify-between items-center p-6 text-foreground">
             <a href="/" onClick={handleLogoClick} className="flex items-center space-x-2 no-underline">
-              <span className="text-xl font-display font-bold tracking-tight">ARCA</span>
-              <span className="text-xl font-display font-normal tracking-tight">LABORATORY</span>
+              <span className="text-xl font-display font-bold tracking-tight">OPTICAL</span>
+              <span className="text-xl font-display font-normal tracking-tight">MESH</span>
             </a>
             <button
               className="text-foreground"
@@ -163,10 +163,9 @@ interface NavLinksProps {
 const NavLinks = ({ mobile, isScrolled, onNavigate }: NavLinksProps) => {
   const links = [
     { name: 'Mission', sectionId: 'mission' },
-    { name: 'Research', sectionId: 'research' },
-    { name: 'Team', sectionId: 'team' },
-    { name: 'Publications', sectionId: 'publications' },
-    { name: 'News', sectionId: 'news' },
+    { name: 'Customers', sectionId: 'customers' },
+    { name: 'Technology', sectionId: 'technology' },
+    { name: 'Product', sectionId: 'product' },
   ];
 
   return (

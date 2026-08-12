@@ -23,7 +23,7 @@ const ResearchDetailHeader: React.FC<ResearchDetailHeaderProps> = ({ imageSrc, v
   }, [videoSrc]);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-[80vh] w-full overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         {videoSrc ? (
           // Video background with overlay
@@ -48,18 +48,23 @@ const ResearchDetailHeader: React.FC<ResearchDetailHeaderProps> = ({ imageSrc, v
                 }}
               />
             </video>
-            <div className="absolute inset-0 bg-black/50"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-primary/20"></div>
           </>
         ) : (
           // Image background with overlay
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{ 
-              backgroundImage: `url(${getAssetPath(imageSrc)})`,
-              backgroundBlendMode: 'overlay',
-              backgroundColor: 'rgba(0,0,0,0.6)'
-            }} 
-          />
+          <>
+            <div 
+              className="w-full h-full bg-cover bg-center"
+              style={{ 
+                backgroundImage: `url(${getAssetPath(imageSrc)})`,
+                backgroundBlendMode: 'overlay',
+                backgroundColor: 'rgba(0,0,0,0.6)'
+              }} 
+            />
+            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-primary/20"></div>
+          </>
         )}
       </div>
       

@@ -14,9 +14,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h2 className="text-xl font-display font-bold mb-4">ARCA LABORATORY</h2>
+            <h2 className="text-xl font-display font-bold mb-4">OPTICAL MESH</h2>
             <p className="text-muted-foreground max-w-sm">
-              Advancing Robotics for Construction and Architecture.
+              Jam-resistant optical mesh communication for robot swarms.
             </p>
             
             <div className="mt-6 flex space-x-4">
@@ -46,28 +46,25 @@ const Footer = () => {
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-foreground">Navigation</h3>
             <ul className="space-y-2">
               <li><button onClick={() => navigateToSection('mission')} className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Mission</button></li>
-              <li><button onClick={() => navigateToSection('research')} className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Research</button></li>
-              <li><button onClick={() => navigateToSection('team')} className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Team</button></li>
-              <li><button onClick={() => navigateToSection('publications')} className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Publications</button></li>
-              <li><button onClick={() => navigateToSection('news')} className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">News</button></li>
+              <li><button onClick={() => navigateToSection('customers')} className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Customers</button></li>
+              <li><button onClick={() => navigateToSection('technology')} className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Technology</button></li>
+              <li><button onClick={() => navigateToSection('product')} className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Product</button></li>
               <li><button onClick={() => navigateToSection('contact')} className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Contact</button></li>
+
             </ul>
           </div>
           
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-foreground">Contact</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>Building 55, School of Architecture</li>
-              <li>Ariel University</li>
-              <li>65 Ramat HaGolan St, Ariel, Israel</li>
-              <li>Email: <a href="mailto:tomsha@ariel.ac.il" className="text-muted-foreground hover:text-primary">tomsha@ariel.ac.il</a></li>
-              <li>Phone: <a href="tel:+97239066242" className="text-muted-foreground hover:text-primary">+972 (3) 906-6242</a></li>
+              <li>Email: <a href="mailto:info@robotai.info" className="text-muted-foreground hover:text-primary">info@robotai.info</a></li>
+              <li>Web: <a href="https://www.robotai.info" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">www.robotai.info</a></li>
             </ul>
           </div>
         </div>
         
         <div className="mt-12 pt-8 border-t border-border text-center text-muted-foreground text-sm">
-          <p>© {new Date().getFullYear()} ARCA Laboratory. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Optical Mesh by RobotAI. All rights reserved.</p>
         </div>
       </div>
     </footer>

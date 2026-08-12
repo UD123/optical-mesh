@@ -1,36 +1,35 @@
-
 import React from 'react';
 import { getAssetPath } from '@/utils/assetPaths';
 
 const Hero = () => {
-  return <div className="relative h-[80vh] w-full overflow-hidden">
-      {/* Full-page Video Background */}
+  return (
+    <div className="relative h-[85vh] min-h-[520px] w-full overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <video autoPlay muted loop playsInline className="object-cover w-full h-full">
-          <source src={getAssetPath('/assets/videos/arca-hero.mp4')} type="video/mp4" />
-        </video>
-        
-        {/* Overlays */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <img
+          src={getAssetPath('/images/optical/mesh-network.jpg')}
+          alt="Swarm of drones connected by green laser links forming a multi-hop optical mesh network over a battlefield"
+          className="object-cover w-full h-full"
+        />
+        <div className="absolute inset-0 bg-black/55"></div>
         <div className="absolute inset-0 bg-primary/20"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex items-center justify-center h-full px-6 md:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight md:leading-tight tracking-tight text-white">
-            Architectural Robotics &amp; <span className="text-[#C5D1C9]">Construction Automation</span>
-          </h1>
+      <div className="relative z-10 flex items-center h-full px-6 md:px-8">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="max-w-3xl">
+            <span className="text-xs uppercase tracking-[0.25em] text-white/70">Optical Mesh</span>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mt-5">
+              Optical Drone <span className="text-[#C5D1C9]">Communication</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/85 font-light mt-6 max-w-2xl">
+              A jam-resistant, multi-hop laser mesh network for robot swarms — connectivity that holds
+              where radio frequency fails.
+            </p>
+          </div>
         </div>
       </div>
-
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-8 left-0 right-0 mx-auto w-24 text-center animate-bounce opacity-70 text-white">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto">
-          <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
-    </div>;
+    </div>
+  );
 };
 
 export default Hero;

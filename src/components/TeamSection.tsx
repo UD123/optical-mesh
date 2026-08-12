@@ -83,7 +83,7 @@ const TeamSection = () => {
     <Section id="team" className="bg-background">
       <div className="mb-16 text-center">
         <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 animate-fade-in">Our Team</h2>
-        <p className="text-foreground/70 max-w-3xl mx-auto animate-fade-in">
+        <p className="text-muted-foreground max-w-3xl mx-auto animate-fade-in">
           Bringing together experts in artificial intelligence, robotics, and engineering to push the boundaries of autonomous systems.
         </p>
       </div>
@@ -109,10 +109,10 @@ const TeamSection = () => {
           return (
             <div
               key={index}
-              className={`glass-panel overflow-hidden transition-all hover:translate-y-[-8px] group animate-fade-in ${
+              className={`bg-card border border-border overflow-hidden transition-all hover:-translate-y-2 group animate-fade-in ${
                 isJoinCard
-                  ? 'cursor-pointer border-dashed border-2 border-border/60 hover:border-foreground/30 hover:shadow-lg hover:bg-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
-                  : ''
+                  ? 'cursor-pointer border-dashed hover:border-primary hover:shadow-lg hover:bg-accent/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
+                  : 'hover:border-primary'
               }`}
               style={{ animationDelay: `${0.2 + index * 0.15}s` }}
               role={isJoinCard ? 'button' : undefined}
@@ -123,7 +123,7 @@ const TeamSection = () => {
             >
               <div className="aspect-square overflow-hidden">
                 {isJoinCard ? (
-                  <div className="w-full h-full flex items-center justify-center bg-secondary/60 text-foreground/25 group-hover:text-foreground/45 transition-colors">
+                  <div className="w-full h-full flex items-center justify-center bg-secondary text-muted-foreground/30 group-hover:text-primary/50 transition-colors">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="96"
@@ -148,9 +148,9 @@ const TeamSection = () => {
                 )}
               </div>
               <div className="p-6">
-                <h3 className="font-display text-xl font-semibold mb-1 text-primary">{member.name}</h3>
+                <h3 className="font-display text-xl font-semibold mb-1 text-card-foreground">{member.name}</h3>
                 <p className="text-foreground/90 font-medium text-sm mb-3">{member.role}</p>
-                <p className="text-foreground/70 text-sm">{member.bio}</p>
+                <p className="text-muted-foreground text-sm">{member.bio}</p>
               </div>
             </div>
           );

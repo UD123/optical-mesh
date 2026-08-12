@@ -16,61 +16,55 @@ const NewsSection = () => {
   };
 
   return (
-    <Section id="news" className="bg-secondary/30" withDivider>
+    <Section id="news" className="bg-background" withDivider>
       <div className="mb-16 text-center">
         <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 animate-fade-in">Latest News</h2>
-        <p className="text-foreground/70 max-w-3xl mx-auto animate-fade-in">
+        <p className="text-muted-foreground max-w-3xl mx-auto animate-fade-in">
           Stay updated with our latest research presentations, publications, and laboratory activities.
         </p>
       </div>
 
-      <div className="space-y-6 max-w-4xl mx-auto">
-        {newsItems.slice(0, 5).map((item, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {newsItems.slice(0, 4).map((item, index) => (
           <div 
             key={item.id} 
-            className="glass-panel transition-all hover:translate-x-1 group animate-fade-in cursor-pointer overflow-hidden"
+            className="group flex gap-6 items-start bg-card border border-border p-4 hover:border-primary transition-all animate-fade-in cursor-pointer"
             style={{ animationDelay: `${0.2 + index * 0.1}s` }}
             onClick={() => navigate(`/news/${item.id}`)}
           >
-            <div className="flex flex-col md:flex-row">
-              {/* Square Image/Color Block */}
-              <div className="w-full md:w-1/3 aspect-square flex-shrink-0 relative overflow-hidden">
-                {item.image ? (
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div 
-                    className="w-full h-full relative overflow-hidden"
-                    style={{ backgroundColor: item.color ?? newsColors[index % newsColors.length] }}
-                  >
-                    <span className="absolute bottom-0 left-0 text-white/90 font-sans font-bold text-5xl md:text-6xl lg:text-7xl leading-[0.85] tracking-tight p-3 translate-y-[10%]">
-                      {item.shortTitle}
-                    </span>
-                  </div>
-                )}
-              </div>
-              
-              {/* Content */}
-              <div className="w-full md:w-2/3 p-5 flex items-center gap-4">
-                <div className="flex-1 min-w-0 flex flex-col justify-between h-full">
-                  <div>
-                    <p className="text-foreground/50 text-xs uppercase tracking-wider mb-2">{formatDate(item.date)}</p>
-                    <h3 className="font-display text-xl font-bold text-primary group-hover:text-primary/90 leading-tight mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-foreground/70 text-sm line-clamp-2">{item.summary}</p>
-                  </div>
-                  <span className="text-primary/80 text-sm font-medium mt-3 inline-flex items-center gap-1 group-hover:text-primary transition-colors">
-                    Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
+            {/* Square Image/Color Block */}
+            <div className="w-24 h-24 flex-shrink-0 relative overflow-hidden bg-secondary">
+              {item.image ? (
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div 
+                  className="w-full h-full relative overflow-hidden"
+                  style={{ backgroundColor: item.color ?? newsColors[index % newsColors.length] }}
+                >
+                  <span className="absolute bottom-0 left-0 text-white/90 font-sans font-bold text-lg leading-tight p-2">
+                    {item.shortTitle}
                   </span>
                 </div>
-              </div>
+              )}
+            </div>
+            
+            {/* Content */}
+            <div className="flex-1 min-w-0">
+              <p className="text-muted-foreground text-[10px] uppercase tracking-wider mb-1">{formatDate(item.date)}</p>
+              <h3 className="font-display text-lg font-semibold text-card-foreground group-hover:text-primary leading-tight mb-2 transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-muted-foreground text-sm line-clamp-2">{item.summary}</p>
+              <span className="text-primary text-xs font-bold mt-2 inline-flex items-center gap-1 group-hover:underline transition-colors">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
             </div>
           </div>
         ))}

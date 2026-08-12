@@ -12,16 +12,17 @@ export interface NewsItem {
 }
 
 // Default color palette for news items without an explicit color
+// Harmonized sage & cream tones to match the site rebrand
 export const newsColors = [
-  'hsl(220, 70%, 45%)',  // Blue
-  'hsl(160, 60%, 35%)',  // Teal
-  'hsl(350, 65%, 45%)',  // Rose
-  'hsl(30, 70%, 45%)',   // Orange
-  'hsl(270, 55%, 45%)',  // Purple
-  'hsl(180, 50%, 35%)',  // Cyan
-  'hsl(45, 75%, 40%)',   // Amber
-  'hsl(200, 65%, 40%)',  // Sky
-  'hsl(330, 60%, 40%)',  // Raspberry
+  'hsl(153, 18%, 45%)',  // Sage
+  'hsl(140, 15%, 55%)',  // Soft sage
+  'hsl(50, 20%, 65%)',   // Warm beige
+  'hsl(160, 12%, 40%)',  // Muted teal
+  'hsl(35, 22%, 58%)',   // Sand
+  'hsl(145, 16%, 50%)',  // Green sage
+  'hsl(45, 18%, 68%)',   // Cream tan
+  'hsl(150, 10%, 38%)',  // Deep sage
+  'hsl(55, 20%, 72%)',   // Light sand
 ];
 
 export const newsItems: NewsItem[] = [

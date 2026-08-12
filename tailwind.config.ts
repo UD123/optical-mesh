@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-				display: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+				sans: ['Epilogue', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+				display: ['Urbanist', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

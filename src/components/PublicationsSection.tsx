@@ -46,51 +46,47 @@ const PublicationsSection = () => {
       year: 2024,
       link: "https://www.researchgate.net/publication/377614175_OS-BREEZE_Oil_Spills_Boundary_Red_Emission_Zone_Estimation_Using_Unmanned_Surface_Vehicles"
     },
-    // {
-    //   title: "Toward Acoustic Landscapes: A Digital Design Workflow for Embedding Noise Reduction in Ground-forming",
-    //   authors: "Karen Lee Bar-Sinai, Tom Shaked, Elif Simge Fettahoglu, Jochen Krimm, Ekaterina Pestriakova, Liubov Kniazeva, Sharon Friedberg, Benedikt Boucsein",
-    //   journal: "Digital Landscape Architecture Conference",
-    //   year: 2023,
-    //   link: "https://www.researchgate.net/publication/370980617_Toward_Acoustic_Landscapes_A_Digital_Design_Workflow_for_Embedding_Noise_Reduction_in_Ground-forming"
-    // }
   ];
 
   return (
-    <Section id="publications" className="bg-secondary/30" withDivider>
-      <div className="mb-16 text-center">
-        <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 animate-fade-in">Recent Publications</h2>
-        <p className="text-foreground/70 max-w-3xl mx-auto animate-fade-in">
-          Our research has been published in top-tier conferences and journals in robotics, construction automation, and human-machine interaction.
-        </p>
-      </div>
-
-      <div className="space-y-6 max-w-4xl mx-auto">
-        {publications.map((pub, index) => (
-          <div 
-            key={index} 
-            className="glass-panel p-6 transition-all hover:translate-x-1 group animate-fade-in"
-            style={{ animationDelay: `${0.2 + index * 0.1}s` }}
-          >
-            <h3 className="font-display text-lg font-medium mb-2 text-primary group-hover:text-primary/90">{pub.title}</h3>
-            <p className="text-foreground/80 text-sm mb-1">{pub.authors}</p>
-            <p className="text-foreground/60 text-sm mb-2">
-              <span>{pub.journal}</span>
-              <span className="mx-2">•</span>
-              <span>{pub.year}</span>
-            </p>
-            <a 
-              href={pub.link} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-primary/80 text-sm hover:text-primary hover:underline inline-flex items-center gap-1"
-            >
-              View publication
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M7 7l10 10M7 17V7h10" />
-              </svg>
-            </a>
+    <Section id="publications" className="bg-secondary/50" withDivider>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-10 animate-fade-in">Selected Publications</h2>
+          <ul className="space-y-8">
+            {publications.map((pub, index) => (
+              <li key={index} className="border-b border-border pb-6 animate-fade-in" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
+                <p className="text-xs font-bold text-primary mb-1 uppercase tracking-wider">{pub.year} • {pub.journal}</p>
+                <a 
+                  href={pub.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-lg font-medium text-card-foreground hover:text-primary transition-colors no-underline"
+                >
+                  {pub.title}
+                </a>
+                <p className="text-sm text-muted-foreground mt-2 italic">{pub.authors}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <div className="lg:pl-8">
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-10 animate-fade-in">Research Impact</h2>
+          <p className="text-muted-foreground text-lg leading-relaxed animate-fade-in">
+            Our research has been published in top-tier conferences and journals in robotics, construction automation, and human-machine interaction. We collaborate with leading institutions worldwide to advance the field of architectural robotics.
+          </p>
+          <div className="mt-10 grid grid-cols-2 gap-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="border-l-2 border-primary pl-4">
+              <span className="font-display text-4xl font-bold text-card-foreground">50+</span>
+              <p className="text-sm text-muted-foreground mt-1">Publications</p>
+            </div>
+            <div className="border-l-2 border-primary pl-4">
+              <span className="font-display text-4xl font-bold text-card-foreground">10+</span>
+              <p className="text-sm text-muted-foreground mt-1">Research Grants</p>
+            </div>
           </div>
-        ))}
+        </div>
       </div>
     </Section>
   );

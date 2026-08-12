@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700&family=Urbanist:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --background: 50 33% 96%;
+    --foreground: 152 11% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 152 11% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 152 11% 27%;
 
-    --primary: 0 0% 0%;
+    --primary: 153 11% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 53 22% 93%;
+    --secondary-foreground: 152 11% 27%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 53 22% 93%;
+    --muted-foreground: 148 7% 45%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 140 12% 80%;
+    --accent-foreground: 152 11% 27%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 0%;
+    --border: 51 12% 88%;
+    --input: 51 12% 88%;
+    --ring: 153 11% 60%;
 
     --radius: 0.5rem;
   }
@@ -47,16 +47,18 @@
     /* scroll-smooth removed - causes jumping issues on iOS Safari */
   }
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Epilogue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   
-  /* Removed the section-divider class that was creating the diagonal effect */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Urbanist', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
   
   .glass-panel {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
   }
   
   .text-balance {
@@ -86,18 +88,20 @@
     background: hsl(var(--primary));
   }
   
-  /* Make all links have underline and proper contrast */
+  /* Links use semantic primary color */
   a {
-    @apply underline underline-offset-2 hover:text-black transition-colors;
+    @apply underline underline-offset-2 hover:text-primary transition-colors;
   }
   
-  /* Dark background links should be white */
-  .bg-black a, [class*="bg-primary"] a, [style*="background-color: black"] a,
-  [style*="background-image"] a, [class*="bg-cover"] a {
+  /* Dark background links should remain light */
+  .bg-primary a,
+  .bg-foreground a,
+  [style*="background-image"] a,
+  [class*="bg-cover"] a {
     @apply text-white hover:text-white/80;
   }
   
-  /* Except for links in navigation */
+  /* Except for links in navigation and footer */
   header a, 
   footer a {
     @apply no-underline hover:underline;
@@ -109,12 +113,16 @@
   }
   
   footer a {
-    @apply text-white/70 hover:text-white transition-colors;
+    @apply text-foreground/70 hover:text-primary transition-colors;
   }
   
-  /* Ensure dark background sections have white text */
-  .bg-black, [class*="bg-primary"], [style*="background-color: black"] {
-    @apply text-white;
+  /* Ensure primary/foreground background sections have correct text */
+  .bg-primary {
+    @apply text-primary-foreground;
+  }
+  
+  .bg-foreground {
+    @apply text-background;
   }
   
   /* Ensure sections with background images have white text */

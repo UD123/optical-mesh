@@ -1,12 +1,12 @@
 import React from 'react';
-import meshAsset from '@/assets/image3.png.asset.json';
+import { getAssetPath } from '@/utils/assetPaths';
 
 const Hero = () => {
   return (
     <div className="relative h-[85vh] min-h-[520px] w-full overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src={meshAsset.url}
+          src={getAssetPath('/images/optical/mesh-network.jpg')}
           alt="Swarm of drones connected by green laser links forming a multi-hop optical mesh network over a battlefield"
           className="object-cover w-full h-full"
         />

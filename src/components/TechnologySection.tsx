@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from './Section';
-import antiJammingAsset from '@/assets/image4.png.asset.json';
+import { getAssetPath } from '@/utils/assetPaths';
 
 const TechnologySection = () => {
   return (
@@ -19,7 +19,7 @@ const TechnologySection = () => {
 
       <div className="border border-border bg-white p-6 md:p-10">
         <img
-          src={antiJammingAsset.url}
+          src={getAssetPath('/images/optical/laser-link-diagram.jpg')}
           alt="Diagram of laser link between an attack drone and a relay drone, with a wired connection to a ground operator through an urban environment"
           className="w-full h-auto"
           loading="lazy"

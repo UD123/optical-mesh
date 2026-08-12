@@ -57,7 +57,7 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-foreground">Contact</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>Email: <a href="mailto:uri.dubin@robotai.info" className="text-muted-foreground hover:text-primary">uri.dubin@robotai.info</a></li>
+              <li>Email: <a href="mailto:info@robotai.info" className="text-muted-foreground hover:text-primary">info@robotai.info</a></li>
               <li>Web: <a href="https://www.robotai.info" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">www.robotai.info</a></li>
             </ul>
           </div>

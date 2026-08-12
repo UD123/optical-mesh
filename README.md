@@ -112,7 +112,7 @@ Update these files when contact details change:
 - `src/components/Footer.tsx` — email, website, and social links
 - `index.html` — page title and meta description for SEO
 
-Current contact email: `uri.dubin@robotai.info`
+Current contact email: `info@robotai.info`
 
 ---
 

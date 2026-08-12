@@ -1,173 +1,149 @@
+# Optical Mesh Product Page Configuration Guide
 
-# ARCA Laboratory Website Configuration Guide
-
-This document provides instructions for customizing the ARCA Laboratory website, including how and where to change background images, add new projects and content, update team members, and manage the publications list.
+This document explains how to customize the Optical Mesh product page: update the hero visual, edit section copy, change contact details, and manage styling.
 
 ---
 
 ## Table of Contents
 
-- [Changing Background Images and Videos](#changing-background-images-and-videos)
-- [Editing/Adding Research Projects](#editingadding-research-projects)
-- [Managing Team Members](#managing-team-members)
-- [Updating Publications](#updating-publications)
-- [Changing the Hero Section (Landing Page)](#changing-the-hero-section-landing-page)
+- [Overview](#overview)
+- [Changing the Hero Image](#changing-the-hero-image)
+- [Updating Section Content](#updating-section-content)
+  - [Mission](#mission)
+  - [Customers](#customers)
+  - [Technology](#technology)
+  - [Product Benefits](#product-benefits)
+  - [Contact](#contact)
 - [Updating Contact Information](#updating-contact-information)
+- [Styling & Branding](#styling--branding)
 - [Deployment & Local Development](#deployment--local-development)
 
 ---
 
-## Changing Background Images and Videos
+## Overview
 
-Images and video assets are stored in the `public/assets/` folder.
+This site is a single-page product page for **Optical Mesh** — a jam-resistant, multi-hop laser communication network for robot swarms.
 
-- **Main Page Background Video:**  
-  - Path: `public/assets/videos/arca-hero.mp4`
-  - Change by replacing this file or updating its path in `src/components/Hero.tsx`:
-    ```jsx
-    <source src={getAssetPath('/assets/videos/arca-hero.mp4')} type="video/mp4" />
-    ```
+The page is composed of these sections, in order:
 
-- **Research/Project Images:**  
-  - Store images in `public/assets/images/research/`
-  - Update their references in the project data file `src/data/researchProjects.ts`
+1. **Hero** — full-width visual with headline and tagline
+2. **Mission** — value proposition for contested RF environments
+3. **Customers** — target use-cases and buyer personas
+4. **Technology** — how the optical mesh works, with a diagram
+5. **Product** — key benefits
+6. **Contact** — inquiry form and email
+7. **Footer** — navigation, social links, and copyright
 
-- **Team Photos and Other Images:**  
-  - Store in `public/assets/images/team/` for team members
-  - Update as referenced in `src/components/TeamSection.tsx`
-
-> **Tip:**  
-> To add a new image or video, simply put your file into the appropriate folder and reference it using a relative path (ex: `/assets/images/yourimage.jpg`).
+Section order and composition are controlled in `src/pages/Index.tsx`.
 
 ---
 
-## Editing/Adding Research Projects
+## Changing the Hero Image
 
-All research project entries are managed in [`src/data/researchProjects.ts`](src/data/researchProjects.ts).
+The hero background image is referenced in `src/components/Hero.tsx`:
 
-- **Add a New Project:**  
-  1. Open `src/data/researchProjects.ts`
-  2. Add an object to the `researchProjects` array with this structure:
-      ```ts
-      {
-        id: 'unique-project-id',
-        title: 'Project Title',
-        description: 'Short description for cards',
-        longDescription: [
-          'Paragraph 1.',
-          'Paragraph 2 (optional).'
-        ],
-        image: '/assets/images/research/your-image.jpg',
-        videoSrc: '/assets/videos/your-video.mp4', // optional
-        publications: [
-          {
-            title: 'Publication Title',
-            authors: 'Author list',
-            year: 2023,
-            source: 'Journal/Conference',
-            link: 'https://...'
-          }
-        ],
-        relatedResearch: ['other-project-id'] // optional
-      }
-      ```
-  3. Put image and video files in their respective folders.
+```tsx
+<img
+  src={getAssetPath('/images/optical/mesh-network.jpg')}
+  alt="Swarm of drones connected by green laser links forming a multi-hop optical mesh network over a battlefield"
+  className="object-cover w-full h-full"
+/>
+```
 
-- **Edit/Remove Existing Projects:**  
-  - Edit or remove objects from the `researchProjects` array as needed.
+To replace it:
+
+1. Add your new image to `public/images/optical/` (for example `public/images/optical/new-hero.jpg`).
+2. Update the `src` path in `src/components/Hero.tsx`.
+3. Update the `alt` text to describe the new image.
+
+The hero headline and subheadline are also in `src/components/Hero.tsx`.
 
 ---
 
-## Managing Team Members
+## Updating Section Content
 
-Team members are defined directly in [`src/components/TeamSection.tsx`](src/components/TeamSection.tsx).
+### Mission
 
-- **Add/Edit a Team Member:**
-  1. Open `TeamSection.tsx`
-  2. Update the `teamMembers` array:
-      ```js
-      {
-        name: 'Full Name',
-        role: 'Position or title',
-        bio: 'Short biography...',
-        image: '/assets/images/team/filename.jpg'
-      }
-      ```
-  3. Add their photo to `public/assets/images/team/`
+Edit the mission copy in `src/components/MissionSection.tsx`.
 
-- **Remove a Member:**  
-  - Simply remove their entry from the array.
+### Customers
 
----
+Edit the customer cards in `src/components/CustomersSection.tsx`:
 
-## Updating Publications
+```ts
+const customers = [
+  {
+    title: 'Defense & Special Operations',
+    description: 'Units operating in electronic-warfare environments...',
+  },
+  // ...
+];
+```
 
-The publications list for the main site can be edited in [`src/components/PublicationsSection.tsx`](src/components/PublicationsSection.tsx):
+### Technology
 
-- **To add or update a publication:**
-  1. Edit the `publications` array:
-      ```js
-      {
-        title: 'Title of the publication',
-        authors: 'Authors',
-        journal: 'Journal or Conference',
-        year: 2024,
-        link: 'https://...'
-      }
-      ```
+Edit the technology explanation in `src/components/TechnologySection.tsx`. The diagram image is referenced inside that file — replace it by adding a new image to `public/images/optical/` and updating the path.
 
----
+### Product Benefits
 
-## Changing the Hero Section (Landing Page)
+Edit the benefit cards in `src/components/ProductSection.tsx`:
 
-- **To update the hero (landing) section video or image:**  
-  1. Upload a new video to `public/assets/videos/`  
-  2. Change the video `src` in `src/components/Hero.tsx`  
-  3. The title text can also be changed directly in `Hero.tsx` (within the `<h1>` tag)
+```ts
+const benefits = [
+  {
+    title: 'Enhanced Reliability',
+    description: 'Reduced susceptibility to environmental interference and jamming.',
+  },
+  // ...
+];
+```
 
-- **To update the Open Graph (social sharing) image:**  
-  1. Replace the value of the `<meta property="og:image" ... />` tag in `index.html`:
-      ```html
-      <meta property="og:image" content="/lovable-uploads/f65dcf06-e07a-41ab-8768-4d5d0f21fe8d.png" />
-      ```
-  2. This ensures social media platforms use the correct preview image.
+### Contact
+
+Edit the contact copy and Formspree endpoint in `src/components/ContactSection.tsx`.
 
 ---
 
 ## Updating Contact Information
 
-- The contact form is handled in [`src/components/ContactSection.tsx`](src/components/ContactSection.tsx).
-- If using Formspree or another provider, update the endpoint in the form’s `action` property:
-    ```jsx
-    <form action="https://formspree.io/f/your-endpoint" method="POST" ...>
-    ```
+Update these files when contact details change:
+
+- `src/components/ContactSection.tsx` — form intro text and Formspree action URL
+- `src/components/Footer.tsx` — email, website, and social links
+- `index.html` — page title and meta description for SEO
+
+Current contact email: `info@robotai.info`
+
+---
+
+## Styling & Branding
+
+Site-wide styling is managed with Tailwind CSS and CSS variables.
+
+- **Color tokens** — edit `src/index.css`
+- **Font families** — edit `tailwind.config.ts` and `index.html` (Google Fonts)
+- **Per-section layout/spacing** — edit the relevant component in `src/components/`
+
+The project uses a sage-and-cream palette with Urbanist headings and Epilogue body text.
 
 ---
 
 ## Deployment & Local Development
 
-- **Local Development:**
-  ```sh
-  npm install
-  npm run dev
-  # Visit http://localhost:8080
-  ```
+**Local Development:**
 
-- **Deploying:**  
-  - For static hosting (like GitHub Pages), just push to your main branch; GitHub Actions will handle deployment.
+```sh
+npm install
+npm run dev
+# Visit http://localhost:8080
+```
 
-- **Custom Domain:**  
-  - Use the domain/DNS settings in your repository and add a CNAME file as needed.
+**Deploying:**
 
----
+For static hosting such as GitHub Pages, push to the main branch; the included GitHub Actions workflow handles deployment.
 
-## Advanced Customization
+**HashRouter:**
 
-- **Styling:**  
-  - For site-wide styles and color changes, edit `tailwind.config.ts`
-  - For per-section changes, edit individual files in `src/components/`
-
-- **Routing/Pages:**  
-  - Adjust routes in `src/App.tsx` as desired.
+Because this project is hosted on GitHub Pages, it uses `HashRouter`. Internal links use hash fragments (for example `/#/mission`).
 
 ---

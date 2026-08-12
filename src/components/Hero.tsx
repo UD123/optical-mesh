@@ -17,8 +17,7 @@ const Hero = () => {
       <div className="relative z-10 flex items-center h-full px-6 md:px-8">
         <div className="max-w-7xl mx-auto w-full">
           <div className="max-w-3xl">
-            <span className="text-xs uppercase tracking-[0.25em] text-white/70">Optical Mesh</span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mt-5">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
               Optical Drone <span className="text-[#C5D1C9]">Communication</span>
             </h1>
             <p className="text-lg md:text-xl text-white/85 font-light mt-6 max-w-2xl">

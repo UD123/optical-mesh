@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,8 +12,8 @@ const queryClient = new QueryClient();
 const isGitHubPages = 
   window.location.hostname.includes('github.io') || 
   window.location.hostname.includes('githubusercontent.com') ||
-  window.location.hostname === 'arcalaboratory.com' ||
-  window.location.hostname === 'www.arcalaboratory.com';
+  window.location.hostname === 'optical-mesh.com' ||
+  window.location.hostname === 'www.optical-mesh.com';
 
 const App = () => (
   <QueryClientProvider client={queryClient}>

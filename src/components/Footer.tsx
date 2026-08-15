@@ -27,7 +27,7 @@ const Footer = () => {
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
               </a>
-              <a href="https://www.instagram.com/arcalaboratory/" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/optical.mesh/" className="text-muted-foreground hover:text-primary transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -36,7 +36,7 @@ const Footer = () => {
               </a>
               <a href="https://github.com/ARCA-Laboratory" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.77 5.07 5.07 0 0 0-.09-3.77s-1.18-.37-3.91 1.48a13.38 13.38 0 0 0-7.16 0C6.18.73 5 1.1 5 1.1a5.07 5.07 0 0 0-.09 3.77A5.44 5.44 0 0 0 3.41 8c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.6V22"/>
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.77 5.07 5.07 0 0 0-.09-3.77s-1.18-.37-3.91 1.48a13.38 13.38 0 0 0-3.91-.52 13.28 13.28 0 0 0-3.91.52c-2.73-1.85-3.91-1.48-3.91-1.48a5.07 5.07 0 0 0-.09 3.77 5.44 5.44 0 0 0-1.5 3.77c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.61v3.87"></path>
                 </svg>
               </a>
             </div>

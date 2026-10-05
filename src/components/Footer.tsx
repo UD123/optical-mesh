@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-border text-center text-muted-foreground text-sm">
-          <p>© {new Date().getFullYear()} Optical Mesh by RobotAI. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Optical Mesh. All rights reserved.</p>
         </div>
       </div>
     </footer>
